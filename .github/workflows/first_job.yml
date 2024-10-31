@@ -1,20 +1,19 @@
-#eg. 2 .github/workflows/first_job.yml
+#eg1. updated
 
 name: First Workflow
 
 on:
   - push
 
-jobs:
-  first_job:
-    name: jomacs-k8s
-    runs-on: ubuntu-latest
-    steps:
-      - name: First Message
-        run: echo "Welome to the World of CICD through GitHub Actions"
+jobs: 
+    first_job: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-      - name: List All Files  including hidden
-        run: ls -1a
-
-      - name: Sow Present Working Directory
-        run: pwd
+            - name: List and Read files
+              run: |
+                echo "My first GitHub Actions Job"
+                ls -1
+                cat dockerfile
