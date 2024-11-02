@@ -24,8 +24,8 @@ jobs:
     needs: docker_build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    #   - name: Checkout Code
+    #     uses: actions/checkout@v4
       - name: Docker Login
         run: docker login --username=kuuyine --password=Dorcoecyps@2024
       - name: Docker Run
