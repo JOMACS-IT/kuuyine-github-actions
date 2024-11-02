@@ -14,6 +14,9 @@ jobs:
       - name: Docker Build
         run: docker build -t docker.io/kuuyine/resume-app:latest .
 
+      - name: List Docker Images
+        run: docker images
+
       - name: Docker Login
         run: docker login --username=kuuyine --password=Dorcoecyps@2024
 
@@ -24,8 +27,8 @@ jobs:
     needs: docker_build
     runs-on: ubuntu-latest
     steps:
-    #   - name: Checkout Code
-    #     uses: actions/checkout@v4
+      #   - name: Checkout Code
+      #     uses: actions/checkout@v4
       - name: Docker Login
         run: docker login --username=kuuyine --password=Dorcoecyps@2024
       - name: Docker Run
